@@ -1,0 +1,123 @@
+@font-face {
+  font-family: "spin_cycle_otregular";
+  src: url("spincycle_ot-webfont.eot");
+  src: url("spincycle_ot-webfont.eot?#iefix") format("embedded-opentype"),
+    url("spincycle_ot-webfont.woff2") format("woff2"),
+    url("spincycle_ot-webfont.woff") format("woff"),
+    url("spincycle_ot-webfont.ttf") format("truetype"),
+    url("spincycle_ot-webfont.svg#spin_cycle_otregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("fonts/SourceSansPro-Regular.woff2") format("woff2"),
+    url("fonts/SourceSansPro-Regular.woff") format("woff"),
+    url("fonts/SourceSansPro-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("fonts/SourceSansPro-Bold.woff2") format("woff2"),
+    url("fonts/SourceSansPro-Bold.woff") format("woff"),
+    url("fonts/SourceSansPro-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-white: hsla(0, 0%, 100%, 1);
+  --color-purple: hsla(274, 100%, 72%, 1);
+  --color-dark-blue: hsla(214, 71%, 9%, 1);
+  --color-header-text: var(--color-white);
+  --color-button: var(--color-purple);
+  --color-footer-background: var(--color-dark-blue);
+  --ff-sans-pro: "Source Sans Pro", Arial, Helvetica, sans-serif;
+  --ff-spin: "spin_cycle_otregular", Verdana, Geneva, Tahoma, sans-seri;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+}
+*,
+::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-sans-pro);
+  margin: 0;
+  font-weight: 500;
+  /* font-size: 16px; */
+}
+
+main {
+  overflow-x: clip;
+}
+h1,
+h2,
+h3 {
+  font-weight: var(--fw-bold);
+  /* line-height: 1.2; */
+  margin: 0;
+}
+
+header {
+  color: var(--color-white);
+  padding-inline: 10.75rem;
+  padding-block-start: 2.18875rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+.nav .menu {
+  display: flex;
+  gap: 3.25rem;
+}
+a {
+  /* color: var(--color-white); */
+  font-size: 0.75rem;
+  font-weight: var(--fw-bold);
+  text-decoration: none;
+}
+
+.hero {
+  text-align: center;
+  color: var(--color-white);
+  background-color: black;
+  padding-block-start: 9.72rem;
+}
+.hero__text {
+  display: grid;
+}
+.hero__text-title {
+  font-size: 7.5rem;
+}
+
+span {
+  display: inline-block;
+}
+
+.button {
+  display: inline-block;
+}
+
+p {
+  color: var(--color-grey);
+  line-height: 1.5;
+  max-width: 35ch;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
