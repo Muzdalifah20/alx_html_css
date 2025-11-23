@@ -1,0 +1,36 @@
+body {
+  display: felx;
+  flex-direction: column;
+}
+
+header {
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  padding-block-start: 2rem;
+}
+
+header ul li a {
+  display: inline-block;
+  align-self: center;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+article {
+  flex: 2;
+  overflow-y: auto;
+}
+
+aside {
+  flex: 1;
+  overflow-y: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
