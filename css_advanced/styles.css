@@ -33,16 +33,19 @@
 :root {
   --color-white: hsla(0, 0%, 100%, 1);
   --color-purple: hsla(274, 100%, 72%, 1);
-  --color-dark-blue: hsla(214, 71%, 9%, 1);
+  --color-black: hsla(214, 71%, 9%, 1);
+  --color-grey: hsla(214, 71%, 9%, 0.5);
+
   --color-header-text: var(--color-white);
   --color-button: var(--color-purple);
-  --color-footer-background: var(--color-dark-blue);
+  --color-footer-background: var(--color-black);
   --ff-sans-pro: "Source Sans Pro", Arial, Helvetica, sans-serif;
   --ff-spin: "spin_cycle_otregular", Verdana, Geneva, Tahoma, sans-seri;
   --fw-light: 300;
   --fw-regular: 400;
   --fw-semi-bold: 600;
   --fw-bold: 700;
+  --fw-extra-bold: 900;
 }
 *,
 ::before,
@@ -54,17 +57,34 @@ body {
   font-family: var(--ff-sans-pro);
   margin: 0;
   font-weight: 500;
-  /* font-size: 16px; */
+  background: none;
 }
 
+body.landing-page {
+  background-image: url("./images/Object.png");
+  max-width: 1440px;
+  max-height: 1093px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.landing-page {
+  /* padding-block-end: 8.75rem; */
+}
 main {
   overflow-x: clip;
 }
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-weight: var(--fw-bold);
   /* line-height: 1.2; */
+  margin: 0;
+}
+p {
   margin: 0;
 }
 
@@ -82,42 +102,194 @@ header {
   display: flex;
   gap: 3.25rem;
 }
-a {
-  /* color: var(--color-white); */
+
+.nav .menu li {
+  list-style: none;
+}
+.nav .menu li a {
+  color: var(--color-white);
   font-size: 0.75rem;
   font-weight: var(--fw-bold);
   text-decoration: none;
+  transition: 150ms ease-in-out;
+  transition-property: color;
+}
+
+.nav .menu li a:hover {
+  color: var(--color-purple);
 }
 
 .hero {
   text-align: center;
   color: var(--color-white);
-  background-color: black;
-  padding-block-start: 9.72rem;
 }
-.hero__text {
-  display: grid;
-}
+/* .hero__text {
+  padding-block-end: 3rem;
+} */
 .hero__text-title {
   font-size: 7.5rem;
+  padding-block-start: 9.72rem;
 }
 
 span {
   display: inline-block;
+  margin-inline: 1.8125rem;
 }
 
 .button {
-  display: inline-block;
+  margin-block-start: 3rem;
+  border: none;
+  padding: 13px 20px;
+  border-radius: 22px;
+  box-shadow: 0 2px 20px hsla(0, 0%, 0%, 0.5);
+  font-size: 0.875rem;
+  font-weight: var(--fw-semi-bold);
+  color: var(--color-white);
+  background-color: var(--color-purple);
+  cursor: pointer;
+  transition: 150ms ease-in-out;
+  transition-property: color background;
 }
 
-p {
+.button:hover {
+  background-color: var(--color-white);
+  color: var(--color-purple);
+}
+
+/* hero section */
+
+.hero__pros {
+  padding-block: 10.5rem 5.4375rem;
+}
+
+.emphasis-purple {
+  color: var(--color-purple);
+}
+
+.hero__teachers {
+  display: flex;
+  justify-content: center;
+  gap: 8.6875rem;
+}
+.teacher {
+  flex: 1;
+  display: grid;
+  justify-items: center;
+  /* color: var(--color-black);
+  background-color: var(--color-white); */
+  padding: 0;
+  max-width: 150px;
+}
+.teacher-image {
+  border-radius: 50%;
+}
+
+.teacher h3 {
+  font-size: 1.125rem;
+  font-weight: var(--fw-extra-bold);
+  line-height: 27px;
+}
+
+.teacher p {
+  /* font-family: var(--ff-spin); */
+  line-height: 24px;
+}
+
+/* p {
   color: var(--color-grey);
   line-height: 1.5;
   max-width: 35ch;
-}
+} */
 
 img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+/* testominal section */
+
+.testominal {
+  font-size: 1.375rem;
+  font-weight: var(--fw-regular);
+  line-height: 33.6px;
+  background-color: var(--color-purple);
+  color: var(--color-white);
+  display: flex;
+  justify-content: space-around;
+  gap: 3.3125rem;
+  padding-block: 6.875rem 7.75rem;
+  padding-inline: 16.25rem 14.8125rem;
+}
+
+blockquote {
+  margin: 0;
+  max-width: 65ch;
+}
+.testominal__image {
+  flex: 1 /3;
+}
+
+.testominal__text {
+  flex: 2 /3;
+}
+
+.popular-tutorials {
+  text-align: center;
+  padding: 87px 106px;
+}
+.popular-tutorials__title {
+  font-size: 2rem;
+  font-weight: var(--fw-light);
+  padding-block-end: 4.6875rem;
+}
+.popular-tutorials__title .emphasis-purple {
+  font-weight: var(--fw-bold);
+}
+
+.tutorials {
+  text-align: start;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.875rem;
+}
+
+.tutorial-title {
+  font-size: 1rem;
+}
+
+.paragrapgh {
+  color: var(--color-grey);
+  font-size: 0.875rem;
+  line-height: 24px;
+  padding-block: 0.475rem 0.8375rem;
+}
+
+.layout {
+  padding: 18px 0px 15px 13px;
+}
+
+.tutorial-teacher {
+  display: flex;
+  align-items: center;
+  gap: 0.8125rem;
+  padding-block-end: 0.875rem;
+}
+
+.tutorial-teacher img {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.tutorial-teacher h4 {
+  font-size: 0.875rem;
+  line-height: 27px;
+  color: var(--color-purple);
+  font-weight: 600;
+}
+
+.stars-value {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-purple);
 }
