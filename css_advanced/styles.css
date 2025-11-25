@@ -12,9 +12,23 @@
 
 @font-face {
   font-family: "Source Sans Pro";
-  src: url("fonts/SourceSansPro-Regular.woff2") format("woff2"),
-    url("fonts/SourceSansPro-Regular.woff") format("woff"),
-    url("fonts/SourceSansPro-Regular.ttf") format("truetype");
+  src: url("fonts/SourceSansPro-ExtraLight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("fonts/SourceSansPro-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("fonts/SourceSansPro-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -22,9 +36,15 @@
 
 @font-face {
   font-family: "Source Sans Pro";
-  src: url("fonts/SourceSansPro-Bold.woff2") format("woff2"),
-    url("fonts/SourceSansPro-Bold.woff") format("woff"),
-    url("fonts/SourceSansPro-Bold.ttf") format("truetype");
+  src: url("fonts/SourceSansPro-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("fonts/SourceSansPro-Bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -35,12 +55,14 @@
   --color-purple: hsla(274, 100%, 72%, 1);
   --color-black: hsla(214, 71%, 9%, 1);
   --color-grey: hsla(214, 71%, 9%, 0.5);
+  --color-grey-light: hsla(210, 2%, 80%, 0.5);
 
   --color-header-text: var(--color-white);
   --color-button: var(--color-purple);
   --color-footer-background: var(--color-black);
   --ff-sans-pro: "Source Sans Pro", Arial, Helvetica, sans-serif;
   --ff-spin: "spin_cycle_otregular", Verdana, Geneva, Tahoma, sans-seri;
+  --fw-extra-light: 200;
   --fw-light: 300;
   --fw-regular: 400;
   --fw-semi-bold: 600;
@@ -57,6 +79,7 @@ body {
   font-family: var(--ff-sans-pro);
   margin: 0;
   font-weight: 500;
+  text-align: center;
   background: none;
 }
 
@@ -246,13 +269,34 @@ blockquote {
   font-weight: var(--fw-bold);
 }
 
-.tutorials {
+.layout-grid {
   text-align: start;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.875rem;
 }
 
+.tutorials {
+  gap: 1.875rem;
+}
+.tutorial__image {
+  position: relative;
+  display: inline-block;
+}
+
+.tutorial__image::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 64px;
+  height: 64px;
+  background-image: url("./images/play.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
 .tutorial-title {
   font-size: 1rem;
 }
@@ -292,4 +336,120 @@ blockquote {
   display: flex;
   justify-content: space-between;
   color: var(--color-purple);
+}
+
+.stars i {
+  color: var(--color-grey-light);
+}
+
+.stars i:nth-child(-n + 4) {
+  color: var(--color-purple);
+}
+
+/* membership section */
+
+.membership {
+  padding-block: 4.375rem 3.25rem;
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+/* .membership__titile {
+} */
+
+.membership__text {
+  padding-inline: 10rem;
+}
+
+.layout-grid.membership__text {
+  gap: 0.875rem;
+  padding-block: 3.625rem 2.3125rem;
+}
+
+.membership__text-content {
+  max-width: 30ch;
+  padding-inline: 21px;
+  display: grid;
+  place-items: center;
+}
+.membership__text-content h3 {
+  font-size: 1.125rem;
+  padding-block: 1.625rem 0.8125rem;
+}
+.membership__text-content p {
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 26px;
+  padding-inline: 20.5px;
+}
+
+/* F.A.Q section */
+
+.f_a_q {
+  padding: 4.75rem 13.5625rem 5.25rem 15.5625rem;
+}
+
+.f_a_q__title {
+  font-weight: var(--fw-light);
+  font-size: 3.75rem;
+  padding-block-end: 4.625rem;
+}
+
+.f_a_q__text {
+  text-align: start;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 13.75rem;
+}
+
+.f_a_q__text-1 {
+  /* display: flex;
+  flex-direction: column; */
+  padding-block-end: 4.625rem;
+}
+
+.f_a_q-question {
+  font-size: 1rem;
+  padding-block-end: 1.875rem;
+}
+
+.f_a_q-answer {
+  color: var(--color-grey);
+  font-size: 0.875rem;
+  line-height: 24px;
+}
+/* footer section */
+footer {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+/* .footer-bar {
+  display: felx;
+  align-items: center;
+  justify-content: space-between;
+} */
+
+.footer-bar {
+  /* padding: 90px 240px 70px 165px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block-start: 5.625rem;
+  padding-inline: 10.3125rem;
+  /* gap: 736px; */
+}
+
+.icons {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.icons i {
+  font-size: 1.875rem;
+}
+
+.footer p {
+  font-size: 0.875rem;
+  padding-block: 4.375rem 2.4375rem;
 }
