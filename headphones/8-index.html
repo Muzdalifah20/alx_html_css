@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>headphone</title>
-    <link rel="stylesheet" href="./2-styles.css" />
+    <link rel="stylesheet" href="./4-styles.css" />
   </head>
   <body class="landing-page">
     <header class="layout-header">
@@ -47,7 +47,7 @@
           </p>
         </div>
       </section>
-      <section class="what_we_do feature-layout">
+      <section id="what-we-do" class="what_we_do feature-layout">
         <p id="what-we-do-info">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -75,7 +75,7 @@
           </div>
         </div>
       </section>
-      <section class="our-result feature-layout">
+      <section id="our-result" class="our-result feature-layout">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -131,6 +131,34 @@
           </div>
         </div>
       </section>
+      <section id="contact-us" class="contact-us">
+        <div class="form-wrapper">
+          <form action="#">
+            <input type="text" name="name" id="" placeholder="Name" />
+            <input type="email" name="email" id="" placeholder="Email" />
+            <input type="text" name="message" id="" placeholder="Message" />
+            <button class="button">CALL TO ACTION</button>
+          </form>
+        </div>
+      </section>
     </main>
+    <footer>
+      <div class="footer-icon-wrapper">
+        <picture>
+          <source media="(min-width: 1200px)"
+          srcset="./assets/images/logo_headphones.png" width="161" height="32" "
+          />
+          <img src="./assets/images/favicon.png" alt="" />
+        </picture>
+
+        <div>
+          <i class="holberton_school-icon-ic_facebook"></i>
+          <i class="holberton_school-icon-ic_twitter"></i>
+          <i class="holberton_school-icon-ic_instagram"></i>
+        </div>
+      </div>
+      <p>©headphones 2020</p>
+    </footer>
+    <script src="./script.js"></script>
   </body>
 </html>
