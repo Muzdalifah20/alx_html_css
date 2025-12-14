@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./3-styles.css" />
   </head>
   <body class="landing-page">
-    <header class="layout">
+    <header class="layout-header">
       <nav>
         <img
           src="./assets/images/logo_headphones.png"
@@ -17,15 +17,15 @@
         />
         <!-- Hamburger button (Mobile only) -->
         <div class="hamburger" id="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+          <span class="bar top"></span>
+          <span class="bar middle"></span>
+          <span class="bar bottom"></span>
         </div>
         <!-- Menu links (Hidden on Mobile) -->
         <ul class="nav-menu" id="nav-menu">
-          <li><a href="#">what we do</a></li>
-          <li><a href="#">our results</a></li>
-          <li><a href="#">contact us</a></li>
+          <li><a href="#what-we-do">what we do</a></li>
+          <li><a href="#our-result">our results</a></li>
+          <li><a href="#contact-us">contact us</a></li>
         </ul>
       </nav>
     </header>
@@ -33,7 +33,9 @@
       <section class="hero layout">
         <div class="hero__text">
           <h1 class="hero-title">Lorem ipsum dolor set amet lorem ipsum</h1>
-          <p>Lorem ipsum dolor set amet lorem ipsum dolor set</p>
+          <p class="hero-paragrapgh">
+            Lorem ipsum dolor set amet lorem ipsum dolor set
+          </p>
           <button class="button">CALL TO ACTION</button>
           <p class="hero-info">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -46,7 +48,7 @@
         </div>
       </section>
       <section class="what_we_do feature-layout">
-        <p>
+        <p id="what-we-do-info">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -140,6 +142,7 @@
         </div>
       </section>
     </main>
+
     <script src="./script.js"></script>
   </body>
 </html>

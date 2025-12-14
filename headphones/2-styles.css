@@ -1,4 +1,5 @@
 @import url("./fonts/fonts_icons/style.css");
+
 @font-face {
   font-family: "spin_cycle_otregular";
   src: url("spincycle_ot-webfont.eot");
@@ -135,11 +136,14 @@ p {
 
 /* hero section */
 .hero {
-  padding-block-end: 31px;
 }
 
 .hero h1 {
   font-size: 2rem;
+  padding-block-end: 5px;
+}
+.hero-paragrapgh {
+  padding-block-end: 20px;
 }
 
 .hero :nth-child(2) {
@@ -152,11 +156,13 @@ p {
   background-color: var(--color-bright-crimson);
   font-size: 14px;
   font-weight: var(--fw-bold);
-  padding: 18px 30px;
+  margin-block-end: 65px;
+  padding: 13px 31px;
   border-radius: 22px;
   transition: opacity 0.15s ease-in-out;
   cursor: pointer;
 }
+
 .button:hover {
   opacity: 0.9;
 }
@@ -169,8 +175,16 @@ img {
   max-width: 100%;
   display: block;
 }
-/* 40 */
+/* 400px */
 @media (max-width: 30em) {
+  .landing-page {
+    max-height: 896px;
+
+    background-position: 35% 10%;
+  }
+  nav {
+    margin-inline: 21px 107px;
+  }
   .hamburger {
     display: flex !important;
     flex-direction: column;
@@ -179,58 +193,91 @@ img {
   }
 
   .bar {
-    width: 25px;
-    height: 3px;
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
     background: var(--color-white);
-    transition: 0.15s;
+    transition: 0.5s;
+    transform-origin: center;
   }
 
-  .nav-menu.active .bar:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
+  .bar.middle {
+    width: 13px;
   }
-  .nav-menu.active .bar:nth-child(2) {
+
+  .bar.bottom {
+    width: 20px;
+  }
+
+  .hamburger.open .top {
+    width: 24px;
+    transform: rotate(45deg) translateY(8px);
+  }
+  .hamburger.open .bottom {
+    width: 24px;
+
+    transform: rotate(-45deg) translateY(-8px);
+  }
+  .hamburger.open .middle {
     opacity: 0;
   }
-  .nav-menu.active .bar:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-  }
+
   nav {
     flex-direction: row-reverse;
   }
   .nav-menu {
     position: fixed;
-    left: -100%;
-    top: 70px;
-    flex-direction: column;
 
+    top: 50px;
+    left: 10px;
+    flex-direction: column;
+    transition: opacity ease-in 0.5s;
     width: 100%;
     text-align: center;
-    transition: 0.15s;
+    opacity: 0;
     padding: 2rem 0;
-    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
   }
-  .nav-menu.active {
-    left: 0;
+  .nav-menu.open {
+    opacity: 1;
+
+    .landing-page {
+      background-size: 10% -20%;
+    }
   }
 
-  .nav-menu li {
-    margin: 1.5rem 0;
+  .hero.layout {
+    padding-inline: 9px;
+    padding-block: 266px 106px;
+  }
+
+  /* our result section */
+  .image-text {
+    padding-block: 0px;
   }
 }
 
 /* What to do section */
+.what_we_do {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .feature-layout {
-  padding-block-end: 110px;
+  padding-block: 190px 110px;
+}
+.what_we_do #what-we-do-info {
+  padding-block-end: 97px;
 }
 
 .what_we_do > p {
   color: var(--color-black);
-  padding: 110px 0px 25px;
+  /* padding: 110px 0px 25px; */
 }
 
 .feature-items {
   display: grid;
+  place-items: center;
   gap: 96px;
   padding-inline: 85px;
 }
@@ -297,21 +344,26 @@ img {
 
 /* 800px */
 @media (min-width: 30em) {
-  /* nav {
-    margin-inline: 4.125rem;
-  } */
+  .layout-header {
+    padding-inline: 66px;
+  }
   .hero__text {
     padding-inline: 0;
   }
 
   .hero {
-    padding-block: 290px 115px;
+    padding-block-start: 290px;
   }
 
-  .button {
-    margin-block: 40px 60px;
+  .hero-paragrapgh {
+    padding-block-end: 40px;
   }
 
+  /* what we do section */
+
+  /* .feature-layout {
+    padding-inline: 82px;
+  } */
   .feature-items {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -319,18 +371,12 @@ img {
     row-gap: 96px;
   }
 
-  h2 {
-    color: var(--color-black);
-  }
-
-  /* what we do section */
-
   .what_we_do > p {
     padding-block: 85px 96px;
     padding-inline: 66px;
   }
 
-  /* ou result section */
+  /* our result  */
   .our-result.feature-layout {
     padding-block: 221px 53px;
   }
@@ -338,6 +384,9 @@ img {
 
 /*  1200px */
 @media (min-width: 75em) {
+  .layout-header {
+    padding-inline: 0px;
+  }
   nav {
     margin-inline: 12.5rem;
     padding-block-start: 1.735rem;
@@ -345,22 +394,34 @@ img {
 
   .hero__text {
     padding-inline: 381px;
+    padding-block-end: 115px;
   }
 
   /* what we do section */
-  .what_we_do > p {
-    padding-inline: 355px;
+  #what-we-do-info {
+    padding-inline: 290px;
   }
-
   .feature-items {
     grid-template-columns: repeat(4, 1fr);
+    padding-inline: 132px;
   }
 
+  /* our result */
   .our-result.feature-layout {
     padding-block-end: 79px;
   }
 
   .our-result > p {
     padding-block-end: 60px;
+  }
+}
+
+@media (max-width: 25rem) {
+  .image-text {
+    padding-block: 0px;
+  }
+  .image-text h2 {
+    font-size: 1.2rem;
+    padding-block-end: 0px;
   }
 }
